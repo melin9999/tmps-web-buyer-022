@@ -77,7 +77,7 @@ const MainHeader = () => {
                 {imageUrl==="none"?<Person sx={{width: 30, height: 30, color: '#475569'}}/>:<Avatar src={imageUrl} sx={{width: 30, height: 30}}/>}
                 <div className='flex-col justify-center items-start w-30 hidden md:flex'>
                   <span className='text-xs font-medium'>{session?.user.name}</span>
-                  <span className='text-xs text-emerald-700'>{"Buyer"}</span>
+                  <span className='text-xs text-[#77bd1f]'>{"Buyer"}</span>
                 </div>
               </div>
               <IconButton ref={anchorRef} onClick={handleToggle}><MoreVert sx={{width: 28, height: 28, color: '#475569'}}/></IconButton>
@@ -101,7 +101,7 @@ const MainHeader = () => {
                       <MenuList autoFocusItem={open} onKeyDown={handleListKeyDown} sx={{width: 220}}>
                         <div className='flex-col justify-center items-start px-4 py-2 bg-white flex md:hidden'>
                           <span className='text-sm'>{session.user.name}</span>
-                          <span className='text-xs text-emerald-700'>{"Buyer"}</span>
+                          <span className='text-xs text-[#77bd1f]'>{"Buyer"}</span>
                         </div>
                         <Divider className='flex md:hidden'/>
                         <MenuItem
@@ -110,7 +110,7 @@ const MainHeader = () => {
                             router.push("/notifications");
                           }}
                         >
-                          <ListItemIcon><Notifications sx={{width: 18, height: 18, color: '#047857'}}/></ListItemIcon>
+                          <ListItemIcon><Notifications sx={{width: 18, height: 18, color: '#77bd1f'}}/></ListItemIcon>
                           <span className='text-sm'>Notifications</span>
                         </MenuItem>
                         <MenuItem
@@ -119,7 +119,7 @@ const MainHeader = () => {
                             router.push("/cart");
                           }}
                         >
-                          <ListItemIcon><ShoppingCart sx={{width: 18, height: 18, color: '#047857'}}/></ListItemIcon>
+                          <ListItemIcon><ShoppingCart sx={{width: 18, height: 18, color: '#77bd1f'}}/></ListItemIcon>
                           <span className='text-sm'>Cart</span>
                         </MenuItem>
                         <MenuItem
@@ -128,7 +128,7 @@ const MainHeader = () => {
                             router.push("/favorites");
                           }}
                         >
-                          <ListItemIcon><Favorite sx={{width: 18, height: 18, color: '#047857'}}/></ListItemIcon>
+                          <ListItemIcon><Favorite sx={{width: 18, height: 18, color: '#77bd1f'}}/></ListItemIcon>
                           <span className='text-sm'>Favorites</span>
                         </MenuItem>
                         <Divider />
@@ -138,7 +138,7 @@ const MainHeader = () => {
                             router.push("/track-order");
                           }}
                         >
-                          <ListItemIcon><DirectionsCar sx={{width: 18, height: 18, color: '#047857'}}/></ListItemIcon>
+                          <ListItemIcon><DirectionsCar sx={{width: 18, height: 18, color: '#77bd1f'}}/></ListItemIcon>
                           <span className='text-sm'>Track Order</span>
                         </MenuItem>
                         <MenuItem
@@ -147,7 +147,7 @@ const MainHeader = () => {
                             router.push("/orders");
                           }}
                         >
-                          <ListItemIcon><FileCopy sx={{width: 18, height: 18, color: '#047857'}}/></ListItemIcon>
+                          <ListItemIcon><FileCopy sx={{width: 18, height: 18, color: '#77bd1f'}}/></ListItemIcon>
                           <span className='text-sm'>Order History</span>
                         </MenuItem>
                         <Divider />
@@ -157,7 +157,7 @@ const MainHeader = () => {
                             router.push("/profile");
                           }}
                         >
-                          <ListItemIcon><Person sx={{width: 18, height: 18, color: '#047857'}}/></ListItemIcon>
+                          <ListItemIcon><Person sx={{width: 18, height: 18, color: '#77bd1f'}}/></ListItemIcon>
                           <span className='text-sm'>Profile</span>
                         </MenuItem>
                         <MenuItem
@@ -166,7 +166,7 @@ const MainHeader = () => {
                             router.push("/settings");
                           }}
                         >
-                          <ListItemIcon><Settings sx={{width: 18, height: 18, color: '#047857'}}/></ListItemIcon>
+                          <ListItemIcon><Settings sx={{width: 18, height: 18, color: '#77bd1f'}}/></ListItemIcon>
                           <span className='text-sm'>Settings</span>
                         </MenuItem>
                         <Divider />
@@ -176,7 +176,7 @@ const MainHeader = () => {
                             onSignOut();
                           }}
                         >
-                          <ListItemIcon>{isLoading?<CircularProgress size={18} style={{'color': '#047857'}}/>:<Logout sx={{width: 18, height: 18, color: '#047857'}}/>}</ListItemIcon>
+                          <ListItemIcon>{isLoading?<CircularProgress size={18} style={{'color': '#77bd1f'}}/>:<Logout sx={{width: 18, height: 18, color: '#77bd1f'}}/>}</ListItemIcon>
                           <span className='text-sm'>Sign Out</span>
                         </MenuItem>
                       </MenuList>

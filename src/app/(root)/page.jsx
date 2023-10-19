@@ -2,7 +2,7 @@ import React from 'react';
 
 const RootPage = () => {
   return (
-    <div>Root Page</div>
+    <div className='mt-[50px] h-[1000px]'>Root Page</div>
   );
 };
 
