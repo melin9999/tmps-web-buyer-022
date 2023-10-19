@@ -7,13 +7,10 @@ const nextConfig = {
         protocol: 'http',
         hostname: 'tm-web.effisoftsolutions.com',
         port: '',
-        pathname: '/**',
-      },
-    ],
-  },
-  experimental: {
-    scrollRestoration: true,
-  },
-}
+        pathname: '/**'
+      }
+    ]
+  }
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
