@@ -133,7 +133,7 @@ const RootPage = () => {
   };
 
   const categoryClicked = (val) => {
-    router.push(`/products/search/category/${val.description}/sub-category/all/`);
+    router.push(`/products/search/category/${val.description}/sub-category/All/`);
   };
 
   const productClicked = (val) => {
