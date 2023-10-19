@@ -79,7 +79,7 @@ const Navbar = ({search, applyFilters}) => {
   };
   
   return (
-    <div className='flex flex-row w-full justify-between items-center max-w-7xl mt-[43px] fixed top-0 z-50' style={{backgroundColor: '#77bd1f'}}>
+    <div className='flex flex-row w-full justify-between items-center max-w-7xl mt-[40px] fixed top-0 z-50' style={{backgroundColor: '#77bd1f'}}>
       <span ref={categoryRef} className='w-[0px] h-[30px] absolute top-2 left-0'/>
       <span ref={brandRef} className='w-[0px] h-[30px] absolute top-2 left-0'/>
       <span ref={sparePartRef} className='w-[0px] h-[30px] absolute top-2 left-0'/>

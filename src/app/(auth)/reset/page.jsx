@@ -10,6 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { ArrowForward, CameraAlt, Key, Login, MailOutline, Phone, Refresh, Save } from '@mui/icons-material';
 import { emailReg } from '@/utils/Validate';
 import useWindowDimensions from '@/hooks/useWindowDimension';
+import Navbar from '@/components/headers/Navbar';
 
 const Reset = () => {
   const router = useRouter();
@@ -402,7 +403,7 @@ const Reset = () => {
   }
 
   return (
-    <div className='form_container' style={{minHeight: (height-80)}}>
+    <div className='form_container mt-[50px]' style={{minHeight: (height-80)}}>
       <div className='form_container_medium'>
         <div className='w-[70px] h-[50px] relative mb-3'><Image src='/logo_1.png' alt='logo'  fill sizes='70px' priority={true} style={{objectFit: 'cover'}}/></div>
         <span className="form_header">Reset Account</span>

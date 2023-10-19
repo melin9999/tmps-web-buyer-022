@@ -1,8 +1,12 @@
+import Navbar from '@/components/headers/Navbar';
 import React from 'react';
 
 const RootPage = () => {
   return (
-    <div className='mt-[50px] h-[1000px]'>Root Page</div>
+    <>
+      <Navbar search={false} applyFilters={null}/>
+      <div className='mt-[80px] h-[1000px]'>Root Page</div>
+    </>
   );
 };
 
