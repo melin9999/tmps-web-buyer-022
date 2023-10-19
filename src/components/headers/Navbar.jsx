@@ -41,14 +41,12 @@ const Navbar = ({search, applyFilters}) => {
 
   const categorySelected = (val) => {
     setOpenCategory(false);
-    setContextDescription('');
     router.push(`/products/search/category/${val.category.description}/sub-category/${val.subCategory.description}/`);
   };
 
   const brandSelected = (val) => {
-    setContextDescription('');
     setOpenBrand(false);
-    router.push(`/products/search/brand/${val.description}/`);
+    router.push(`/products/search/brand/${val.brand.description}/`);
   };
 
   const sparePartSelected = (val) => {
