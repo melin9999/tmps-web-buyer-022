@@ -359,7 +359,7 @@ const Products = ({params}) => {
                     <div className='flex flex-row justify-center items-center gap-2 mt-3 w-full'>
                       {editImages.map(val=>
                         <div key={val.imageUrl} className="flex flex-row justify-center items-center w-[100px] h-[100px] relative cursor-pointer" style={{borderBottom: val.id===selectedImage.id?'3px solid #77bd1f':'3px solid #fff'}} onClick={()=>setSelectedImage(val)}>
-                          <Image src={val.imageUrl} alt="product image" fill sizes={'100px'} priority={true} style={{objectFit: 'contain'}}/>
+                          <Image src={val.imageUrl} alt="product images" fill sizes={'100px'} priority={true} style={{objectFit: 'contain'}}/>
                         </div>
                       )}
                     </div>
