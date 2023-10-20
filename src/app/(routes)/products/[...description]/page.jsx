@@ -59,8 +59,6 @@ const Products = ({params}) => {
 
   const [banners, setBanners] = useState([]);
 
-  const [smallScreen, setSmallScreen] = useState(false);
-
   const [selectedImage, setSelectedImage] = useState(null);
 
   const [quantity, setQuantity] = useState(1);
@@ -71,16 +69,26 @@ const Products = ({params}) => {
   const magnifierHeight = 300;
   const magnifieWidth = 300;
   const zoomLevel = 2;
+  const [imgSize, setImageSize] = useState({width: 400, height: 400});
 
   useEffect(() => {
     setServerError(false);
     setIsLoading(false);
     setIsLoading1(false);
-    if(width>=640){
-      setSmallScreen(false);
+    if(width>=1024){
+      setImageSize({width: 400, height: 400});
+    }
+    else if(width>=768 && width<1024){
+      setImageSize({width: 300, height: 300});
+    }
+    else if(width>=640 && width<768){
+      setImageSize({width: 300, height: 300});
+    }
+    else if(width>=440 && width<640){
+      setImageSize({width: 400, height: 400});
     }
     else{
-      setSmallScreen(true);
+      setImageSize({width: 300, height: 300});
     }
     getBanners();
   }, [width]);
@@ -305,10 +313,7 @@ const Products = ({params}) => {
                           <img 
                             src={selectedImage.imageUrl} 
                             alt="product image" 
-                            fill 
-                            sizes={'(max-width: 440px) 300px, (max-width: 640px) 400px, (max-width: 768px) 300px, (max-width: 1024px) 300px, 400px'} 
-                            priority={true} 
-                            style={{objectFit: 'cover'}}
+                            style={{objectFit: 'cover', width: imgSize.width, height: imgSize.height}}
                             onMouseEnter={(e) => {
                               const elem = e.currentTarget;
                               const { width, height } = elem.getBoundingClientRect();
@@ -359,7 +364,7 @@ const Products = ({params}) => {
                     <div className='flex flex-row justify-center items-center gap-2 mt-3 w-full'>
                       {editImages.map(val=>
                         <div key={val.imageUrl} className="flex flex-row justify-center items-center w-[100px] h-[100px] relative cursor-pointer" style={{borderBottom: val.id===selectedImage.id?'3px solid #77bd1f':'3px solid #fff'}} onClick={()=>setSelectedImage(val)}>
-                          <img src={val.imageUrl} alt="product images" fill sizes={'100px'} priority={true} style={{objectFit: 'contain'}}/>
+                          <img src={val.imageUrl} alt="product images" style={{objectFit: 'contain', width: 100, height: 100}}/>
                         </div>
                       )}
                     </div>
