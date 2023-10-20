@@ -311,7 +311,7 @@ const Profile = () => {
   }
 
   return (
-    <div className='form_container mt-[50px]' style={{minHeight: (height-80)}}>
+    <div className='form_container mt-[40px]' style={{minHeight: (height-80)}}>
       <div className='form_container_medium'>
         <span className="form_header">Profile</span>
         <div className='form_fields_container'>

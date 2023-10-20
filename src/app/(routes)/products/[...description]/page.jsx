@@ -243,11 +243,11 @@ const Products = ({params}) => {
       var val2 = [];
       var index = 1;
       if(val.image_url!=="none"){
-        val2.push({id: index++, imageUrl: " http://tm-web.effisoftsolutions.com/"+val.image_url});
+        val2.push({id: index++, imageUrl: " https://tm-web.effisoftsolutions.com/"+val.image_url});
       }
       var val1 = val.inventory_images;
       val1.map(val3=>{
-        val2.push({id: index++, imageUrl: " http://tm-web.effisoftsolutions.com/"+val3.image_url});
+        val2.push({id: index++, imageUrl: " https://tm-web.effisoftsolutions.com/"+val3.image_url});
       });
 
       setEditImages(val2);

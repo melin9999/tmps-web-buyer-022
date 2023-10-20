@@ -109,7 +109,7 @@ const Signin = () => {
   }
 
   return (
-    <div className='form_container' style={{minHeight: (height-80)}}>
+    <div className='form_container mt-[40px]' style={{minHeight: (height-80)}}>
       <div className='form_container_small'>
         <div className='w-[70px] h-[50px] relative mb-3'><Image src='/logo_1.png' alt='logo' fill sizes='70px' priority={true} style={{objectFit: 'cover'}}/></div>
         <span className="form_header">Sign In</span>
