@@ -183,15 +183,15 @@ const ProductsSearch = ({categoryRef, applyFilters, searchSortBy, setSearchSortB
 
   const categorySelected = (val) => {
     setOpenCategory(false);
-    router.push(`/products/search/category/${val.category.description}/sub-category/${val.subCategory.description}/`);
+    router.push(`/products/search/category/${encodeURIComponent(val.category.description)}/sub-category/${encodeURIComponent(val.subCategory.description)}/`);
   };
 
   const subCategoryClicked = (val) => {
-    router.push(`/products/search/category/${searchCategory.description}/sub-category/${val.description}/`);
+    router.push(`/products/search/category/${encodeURIComponent(searchCategory.description)}/sub-category/${encodeURIComponent(val.description)}/`);
   };
 
   const brandSelected = (val) => {
-    router.push(`/products/search/brand/${val.brand.description}/`);
+    router.push(`/products/search/brand/${encodeURIComponent(val.brand.description)}/`);
   };
 
   const addSearchBrand = (val) => {

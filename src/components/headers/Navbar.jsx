@@ -41,12 +41,12 @@ const Navbar = ({search, applyFilters}) => {
 
   const categorySelected = (val) => {
     setOpenCategory(false);
-    router.push(`/products/search/category/${val.category.description}/sub-category/${val.subCategory.description}/`);
+    router.push(`/products/search/category/${encodeURIComponent(val.category.description)}/sub-category/${encodeURIComponent(val.subCategory.description)}/`);
   };
 
   const brandSelected = (val) => {
     setOpenBrand(false);
-    router.push(`/products/search/brand/${val.brand.description}/`);
+    router.push(`/products/search/brand/${encodeURIComponent(val.brand.description)}/`);
   };
 
   const sparePartSelected = (val) => {
@@ -72,7 +72,7 @@ const Navbar = ({search, applyFilters}) => {
       applyFilters();
     }
     else{
-      router.push(`/products/search/description/${val}/`);
+      router.push(`/products/search/description/${encodeURIComponent(val)}/`);
     }    
   };
   

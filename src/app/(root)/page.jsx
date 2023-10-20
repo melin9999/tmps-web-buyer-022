@@ -133,7 +133,7 @@ const RootPage = () => {
   };
 
   const categoryClicked = (val) => {
-    router.push(`/products/search/category/${val.description}/sub-category/All/`);
+    router.push(`/products/search/category/${encodeURIComponent(val.description)}/sub-category/All/`);
   };
 
   const productClicked = (val) => {
@@ -149,7 +149,7 @@ const RootPage = () => {
   };
 
   const brandClicked = (val) => {
-    router.push(`/products/search/brand/${val.description}/`);
+    router.push(`/products/search/brand/${encodeURIComponent(val.description)}/`);
   };
 
   return (

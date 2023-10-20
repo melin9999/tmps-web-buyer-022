@@ -11,7 +11,7 @@ const SearchProduct = ({itemWidth, val, vertical, selectValue}) => {
             <Image src={val.image_url} alt="product image" fill sizes={'200px'} priority={true} style={{objectFit: 'contain'}}/>}
           </div>
           <div className="flex flex-col w-full justify-start items-start ml-3 mb-3">
-            <span className='flex flex-col w-full h-[35px] overflow-hidden' style={{borderBottom: '1px solid #D1D5DB'}}><a className="text-xs font-semibold text-zinc-700 cursor-pointer no-underline hover:underline" href={'/products/'+val.heading} target="_blank">{val.heading}</a></span>
+            <span className='flex flex-col w-full h-[35px] overflow-hidden' style={{borderBottom: '1px solid #D1D5DB'}}><a className="text-xs font-semibold text-zinc-700 cursor-pointer no-underline hover:underline" href={'/products/'+encodeURIComponent(val.heading)} target="_blank">{val.heading}</a></span>
             <span className='flex flex-col w-full text-[11px] font-normal break-words h-[50px] overflow-hidden mt-1'>{val.short_description}</span>
             <div className='flex flex-row overflow-hidden gap-1 flex-wrap mt-1 w-full h-[22px]'>
               {val.featured==="yes"&&<span className='flex flex-col justify-center items-center h-[22px] py-1 px-1 bg-yellow-200 text-yellow-800 rounded text-[10px] font-bold'>Featured</span>}
@@ -41,7 +41,7 @@ const SearchProduct = ({itemWidth, val, vertical, selectValue}) => {
           </div>
           <div className="flex flex-col justify-between items-start overflow-hidden"style={{width: (itemWidth-151), height: 150}}>
             <div className="flex flex-col w-full justify-start items-start ml-1">
-              <span className='flex flex-col w-full text-xs font-semibold h-[35px] overflow-hidden cursor-pointer hover:underline' onClick={()=>selectValue(val)} style={{borderBottom: '1px solid #D1D5DB'}}>{val.heading}</span>
+              <span className='flex flex-col w-full h-[35px] overflow-hidden' style={{borderBottom: '1px solid #D1D5DB'}}><a className="text-xs font-semibold text-zinc-700 cursor-pointer no-underline hover:underline" href={'/products/'+encodeURIComponent(val.heading)} target="_blank">{val.heading}</a></span>
               <span className='flex flex-col w-full text-[11px] font-normal break-words h-[50px] overflow-hidden mt-1'>{val.short_description}</span>
               <div className='flex flex-row overflow-hidden gap-1 flex-wrap mt-1 w-full h-[22px]'>
                 {val.featured==="yes"&&<span className='flex flex-col justify-center items-center h-[22px] py-1 px-1 bg-yellow-200 text-yellow-800 rounded text-[10px] font-bold'>Featured</span>}
