@@ -302,7 +302,7 @@ const Products = ({params}) => {
                     <div className='flex flex-col justify-center items-center w-[300px] xs:w-[400px] sm:w-[300px] md:w-[300px] lg:w-[400px] h-[300px] xs:h-[400px] sm:h-[300px] md:h-[300px] lg:h-[400px] relative'>
                       {selectedImage ? 
                         <>
-                          <Image 
+                          <img 
                             src={selectedImage.imageUrl} 
                             alt="product image" 
                             fill 
@@ -330,27 +330,27 @@ const Products = ({params}) => {
                             }}
                           />
                           <div
-                              style={{
-                                  display: showMagnifier ? "" : "none",
-                                   position: "absolute",
+                            style={{
+                                display: showMagnifier ? "" : "none",
+                                  position: "absolute",
 
-                                  // prevent magnifier blocks the mousemove event of img
-                                  pointerEvents: "none",
-                                  // set size of magnifier
-                                  height: `${magnifierHeight}px`,
-                                  width: `${magnifieWidth}px`,
-                                  // move element center to cursor pos
-                                  top: `${y - magnifierHeight / 2}px`,
-                                  left: `${x - magnifieWidth / 2}px`,
-                                  opacity: "1", // reduce opacity so you can verify position
-                                  border: "1px solid lightgray", // show the border of magnifier
-                                  backgroundColor: "white",
-                                  backgroundImage: `url('${selectedImage.imageUrl}')`,
-                                  backgroundRepeat: "no-repeat",
-                                  backgroundSize: `${imgWidth * zoomLevel}px ${imgHeight * zoomLevel}px`,
-                                  backgroundPositionX: `${-x * zoomLevel + magnifieWidth / 2}px`,
-                                  backgroundPositionY: `${-y * zoomLevel + magnifierHeight / 2}px`,
-                              }}
+                                // prevent magnifier blocks the mousemove event of img
+                                pointerEvents: "none",
+                                // set size of magnifier
+                                height: `${magnifierHeight}px`,
+                                width: `${magnifieWidth}px`,
+                                // move element center to cursor pos
+                                top: `${y - magnifierHeight / 2}px`,
+                                left: `${x - magnifieWidth / 2}px`,
+                                opacity: "1", // reduce opacity so you can verify position
+                                border: "1px solid lightgray", // show the border of magnifier
+                                backgroundColor: "white",
+                                backgroundImage: `url('${selectedImage.imageUrl}')`,
+                                backgroundRepeat: "no-repeat",
+                                backgroundSize: `${imgWidth * zoomLevel}px ${imgHeight * zoomLevel}px`,
+                                backgroundPositionX: `${-x * zoomLevel + magnifieWidth / 2}px`,
+                                backgroundPositionY: `${-y * zoomLevel + magnifierHeight / 2}px`,
+                            }}
                           />
                         </>:
                         <CameraAlt sx={{width: 120, height: 120, color: '#cbd5e1'}}/>
@@ -359,7 +359,7 @@ const Products = ({params}) => {
                     <div className='flex flex-row justify-center items-center gap-2 mt-3 w-full'>
                       {editImages.map(val=>
                         <div key={val.imageUrl} className="flex flex-row justify-center items-center w-[100px] h-[100px] relative cursor-pointer" style={{borderBottom: val.id===selectedImage.id?'3px solid #77bd1f':'3px solid #fff'}} onClick={()=>setSelectedImage(val)}>
-                          <Image src={val.imageUrl} alt="product images" fill sizes={'100px'} priority={true} style={{objectFit: 'contain'}}/>
+                          <img src={val.imageUrl} alt="product images" fill sizes={'100px'} priority={true} style={{objectFit: 'contain'}}/>
                         </div>
                       )}
                     </div>
