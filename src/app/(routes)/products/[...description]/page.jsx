@@ -206,15 +206,16 @@ const Products = ({params}) => {
     }
   }, []);
 
-  const loadItem = async (heading) => {
+  const loadItem = async (url_string) => {
     setIsLoading(true);
     setServerError(false);
     try{
-      let decoded = decodeURIComponent(heading);
-      const response = await axios.post("/api/inventory/find-for-heading", {
-        heading: decoded
+      let decoded = decodeURIComponent(url_string);
+      const response = await axios.post("/api/inventory/find-by-url", {
+        url_string: decoded
       });
       let val = response.data.data;
+      console.log(val);
       setItem(val);
       setEditId(val.id);
       setEditType(val.type);

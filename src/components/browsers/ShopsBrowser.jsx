@@ -40,6 +40,7 @@ const ShopsBrowser = ({value, valueSelected, setOpen}) => {
           values.push({
             id: val.id,
             description: val.heading,
+            url_string: val.url_string,
             code: val.code,
             image_url: imageUrl,
           });

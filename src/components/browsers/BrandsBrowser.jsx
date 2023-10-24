@@ -5,13 +5,11 @@ import { CameraAlt, Close } from "@mui/icons-material";
 import axios from "axios";
 import useWindowDimensions from '@/hooks/useWindowDimension';
 import Image from 'next/image';
-import { useSearchContext } from '@/providers/SearchContextProvider';
 
 const BrandsBrowser = ({value, valueSelected, setOpen}) => {
   const [isLoading, setIsLoading] = useState(false);
   const [serverError, setServerError] = useState(false);
   const { width=500, height=500 } = useWindowDimensions();
-  const {setContextBrand, setContextDescription, setContextCategory, setContextSubCategory} = useSearchContext();
 
   const [brands, setBrands] = useState([]);
 
@@ -39,6 +37,7 @@ const BrandsBrowser = ({value, valueSelected, setOpen}) => {
           }
           values.push({
             id: val.id,
+            url_string: val.url_string,
             description: val.description,
             code: val.code,
             image_url: imageUrl,

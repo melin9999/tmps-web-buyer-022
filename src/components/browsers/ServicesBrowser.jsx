@@ -39,6 +39,7 @@ const ServicesBrowser = ({value, valueSelected, setOpen}) => {
           }
           values.push({
             id: val.id,
+            url_string: val.url_string,
             description: val.heading,
             code: val.code,
             image_url: imageUrl,

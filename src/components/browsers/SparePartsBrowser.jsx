@@ -1,17 +1,17 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { CircularProgress, ClickAwayListener, IconButton, Paper } from "@mui/material";
-import { CameraAlt, Close } from "@mui/icons-material";
+import { Close } from "@mui/icons-material";
 import axios from "axios";
 import useWindowDimensions from '@/hooks/useWindowDimension';
 import Image from 'next/image';
-import { useSearchContext } from '@/providers/SearchContextProvider';
 
 const SparePartsBrowser = ({value, valueSelected, setOpen}) => {
   const [isLoading, setIsLoading] = useState(false);
   const [serverError, setServerError] = useState(false);
   const { width=500, height=500 } = useWindowDimensions();
-  const {setContextCategory, setContextSubCategory} = useSearchContext();
+  const [category, setCategory] = useState({id: 0, url_string: All, description: "All", image_url: 'none'});
+  const [subCategory, setSubCategory] = useState({id: 0, url_string: All, description: "All", image_url: 'none'});
 
   const [spareParts, setSpareParts] = useState([]);
 
@@ -48,6 +48,7 @@ const SparePartsBrowser = ({value, valueSelected, setOpen}) => {
             }
             sub_categories.push({
               id: val1.id,
+              url_string: val.url_string,
               description: val1.description,
               code: val1.code,
               image_url: imageUrl1,
@@ -55,6 +56,7 @@ const SparePartsBrowser = ({value, valueSelected, setOpen}) => {
           });
           values.push({
             id: val.id,
+            url_string: val.url_string,
             description: val.description,
             code: val.code,
             image_url: imageUrl,
@@ -73,9 +75,9 @@ const SparePartsBrowser = ({value, valueSelected, setOpen}) => {
   };
 
   const categorySelected = (val, val1) => {
-    setContextCategory({id: val.id, description: val.description, image_url: val.image_url});
-    setContextSubCategory({id: val1.id, description: val1.description, image_url: val1.image_url});
-    setContextBrand({id: 0, description: "All", image_url: 'none'});
+    setCategory({id: val.id, url_string: val.url_string, description: val.description, image_url: val.image_url});
+    setSubCategory({id: val1.id, url_string: val.url_string, description: val1.description, image_url: val1.image_url});
+    setBrand({id: 0, url_string: All, description: "All", image_url: 'none'});
     setContextDescription("");
     valueSelected();
   }

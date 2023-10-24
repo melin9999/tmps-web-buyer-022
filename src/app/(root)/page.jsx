@@ -133,23 +133,15 @@ const RootPage = () => {
   };
 
   const categoryClicked = (val) => {
-    router.push(`/products/search/category/${encodeURIComponent(val.description)}/sub-category/All/`);
-  };
-
-  const productClicked = (val) => {
-    //router.push(`/products/view/`);
+    router.push(`/products/search/category/${encodeURIComponent(val.url_string)}/sub-category/All/`);
   };
 
   const bannerClicked = (val) => {
     //router.push(`/products/view/`);
   };
 
-  const discountedClicked = (val) => {
-    //router.push(`/products/view/`);
-  };
-
   const brandClicked = (val) => {
-    router.push(`/products/search/brand/${encodeURIComponent(val.description)}/`);
+    router.push(`/products/search/brand/${encodeURIComponent(val.url_string)}/`);
   };
 
   return (
@@ -158,11 +150,11 @@ const RootPage = () => {
       <div className='pt-[75px] flex w-full max-w-7xl flex-col justify-center items-center' style={{minHeight: (height-80)}}>
         <HomeSlider width={width}/>
         <FeaturedCategories limit={20} width={width} selectValue={categoryClicked}/>
-        <FeaturedProducts limit={20} width={width} selectValue={productClicked}/>
+        <FeaturedProducts limit={20} width={width}/>
         {banners.length>0 &&
           <HomeBannerLarge width={width} banner={banners[0]} selectValue={bannerClicked}/>
         }
-        <DiscountedProducts limit={20} width={width} selectValue={discountedClicked}/>
+        <DiscountedProducts limit={20} width={width}/>
         {banners.length>=1 &&
           <HomeBannerSmall width={width} banner={banners[1]}/>
         }

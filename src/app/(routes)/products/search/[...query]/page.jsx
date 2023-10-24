@@ -132,8 +132,8 @@ const ProductsSearchView = ({params}) => {
       setServerError(false);
       try{
         let decoded = decodeURIComponent(category);
-        const response = await axios.post("/api/categories/find-by-description", {
-          description: decoded
+        const response = await axios.post("/api/categories/find-by-url", {
+          url_string: decoded
         });
         let val = response.data.data;
         var imageUrl = "";
@@ -171,8 +171,8 @@ const ProductsSearchView = ({params}) => {
     setServerError(false);
     try{
       let decoded = decodeURIComponent(subCategory);
-      const response = await axios.post("/api/sub-categories/find-by-description", {
-        description: decoded
+      const response = await axios.post("/api/sub-categories/find-by-url", {
+        url_string: decoded
       });
       let val = response.data.data;
       var imageUrl = "";
@@ -198,8 +198,8 @@ const ProductsSearchView = ({params}) => {
     setServerError(false);
     try{
       let decoded = decodeURIComponent(brand);
-      const response = await axios.post("/api/brands/find-by-description", {
-        description: decoded
+      const response = await axios.post("/api/brands/find-by-url", {
+        url_string: decoded
       });
       let val = response.data.data;
       var imageUrl = "";
@@ -349,6 +349,7 @@ const ProductsSearchView = ({params}) => {
             values.push({
               index: index,
               id: val.id,
+              url_string: val.url_string,
               category_id: val.category_id,
               category_description: val.category.description,
               sub_category_id: val.sub_category_id,

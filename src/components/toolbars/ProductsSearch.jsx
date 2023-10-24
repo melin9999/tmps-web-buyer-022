@@ -111,6 +111,7 @@ const ProductsSearch = ({categoryRef, applyFilters, searchSortBy, setSearchSortB
           }     
           values.push({
             id: val.brand_id,
+            url_string: val.brand.url_string,
             description: val.brand.description,
             image_url: imageUrl
           });
@@ -183,15 +184,15 @@ const ProductsSearch = ({categoryRef, applyFilters, searchSortBy, setSearchSortB
 
   const categorySelected = (val) => {
     setOpenCategory(false);
-    router.push(`/products/search/category/${encodeURIComponent(val.category.description)}/sub-category/${encodeURIComponent(val.subCategory.description)}/`);
+    router.push(`/products/search/category/${encodeURIComponent(val.category.url_string)}/sub-category/${encodeURIComponent(val.subCategory.url_string)}/`);
   };
 
   const subCategoryClicked = (val) => {
-    router.push(`/products/search/category/${encodeURIComponent(searchCategory.description)}/sub-category/${encodeURIComponent(val.description)}/`);
+    router.push(`/products/search/category/${encodeURIComponent(searchCategory.url_string)}/sub-category/${encodeURIComponent(val.url_string)}/`);
   };
 
   const brandSelected = (val) => {
-    router.push(`/products/search/brand/${encodeURIComponent(val.brand.description)}/`);
+    router.push(`/products/search/brand/${encodeURIComponent(val.brand.url_string)}/`);
   };
 
   const addSearchBrand = (val) => {

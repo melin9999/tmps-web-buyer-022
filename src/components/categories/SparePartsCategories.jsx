@@ -107,6 +107,7 @@ const SparePartsCategories = ({width, limit, selectValue}) => {
           values.push({
             index: index,
             id: val.id,
+            url_string: val.url_string,
             description: val.description,
             image_url: imageUrl,
             count: val.count,

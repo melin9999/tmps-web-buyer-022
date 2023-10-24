@@ -4,7 +4,6 @@ import { CircularProgress } from '@mui/material';
 import Slider from 'react-slick';
 import { KeyboardArrowLeft, KeyboardArrowRight } from '@mui/icons-material';
 import FeaturedBrand from './FeaturedBrand';
-import FeaturedCategory from '../categories/FeaturedCategory';
 
 function SampleNextArrow(props) {
   const { onClick } = props;
@@ -108,6 +107,7 @@ const FeaturedBrands = ({width, limit, selectValue}) => {
           values.push({
             index: index,
             id: val.id,
+            url_string: val.url_string,
             description: val.description,
             image_url: imageUrl
           });

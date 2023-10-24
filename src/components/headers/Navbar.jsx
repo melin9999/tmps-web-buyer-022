@@ -41,12 +41,12 @@ const Navbar = ({search, applyFilters}) => {
 
   const categorySelected = (val) => {
     setOpenCategory(false);
-    router.push(`/products/search/category/${encodeURIComponent(val.category.description)}/sub-category/${encodeURIComponent(val.subCategory.description)}/`);
+    router.push(`/products/search/category/${encodeURIComponent(val.category.url_string)}/sub-category/${encodeURIComponent(val.subCategory.url_string)}/`);
   };
 
   const brandSelected = (val) => {
     setOpenBrand(false);
-    router.push(`/products/search/brand/${encodeURIComponent(val.brand.description)}/`);
+    router.push(`/products/search/brand/${encodeURIComponent(val.brand.url_string)}/`);
   };
 
   const sparePartSelected = (val) => {

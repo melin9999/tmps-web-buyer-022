@@ -4,7 +4,7 @@ import { CircularProgress, IconButton, Typography } from '@mui/material';
 import FeaturedProduct from './FeaturedProduct';
 import { KeyboardArrowLeft, KeyboardArrowRight } from '@mui/icons-material';
 
-const FeaturedProducts = ({width, selectValue}) => {
+const FeaturedProducts = ({width}) => {
   const [isLoading, setIsLoading] = useState(false);
   const [serverError, setServerError] = useState(false);
 
@@ -115,6 +115,7 @@ const FeaturedProducts = ({width, selectValue}) => {
               model_id: val.model_id,
               model_description: val.model.description,
               code: val.code,
+              url_string: val.url_string,
               heading: val.heading,
               short_description: val.short_description,
               description: val.description,
@@ -180,7 +181,7 @@ const FeaturedProducts = ({width, selectValue}) => {
           <div className='relative w-full'>
             <div className='flex flex-row justify-center md:justify-between items-center flex-wrap gap-5'>
               {featured.map((val)=>
-                <FeaturedProduct key={val.id+val.heading} val={val} itemWidth={itemWidth} vertical={verticalMode} selectValue={selectValue}/>
+                <FeaturedProduct key={val.id+val.heading} val={val} itemWidth={itemWidth} vertical={verticalMode}/>
               )}
             </div>
           </div>

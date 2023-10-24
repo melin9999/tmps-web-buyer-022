@@ -1,17 +1,15 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { CircularProgress, ClickAwayListener, IconButton, Paper } from "@mui/material";
-import { CameraAlt, Close } from "@mui/icons-material";
+import { Close } from "@mui/icons-material";
 import axios from "axios";
 import useWindowDimensions from '@/hooks/useWindowDimension';
 import Image from 'next/image';
-import { useSearchContext } from '@/providers/SearchContextProvider';
 
 const CategoriesBrowser = ({value, valueSelected, setOpen, includeParts}) => {
   const [isLoading, setIsLoading] = useState(false);
   const [serverError, setServerError] = useState(false);
   const { width=500, height=500 } = useWindowDimensions();
-  const {setContextCategory, setContextSubCategory, setContextBrand, setContextDescription} = useSearchContext();
 
   const [categories, setCategories] = useState([]);
 
@@ -48,6 +46,7 @@ const CategoriesBrowser = ({value, valueSelected, setOpen, includeParts}) => {
             }
             sub_categories.push({
               id: val1.id,
+              url_string: val1.url_string,
               description: val1.description,
               code: val1.code,
               image_url: imageUrl1,
@@ -55,6 +54,7 @@ const CategoriesBrowser = ({value, valueSelected, setOpen, includeParts}) => {
           });
           values.push({
             id: val.id,
+            url_string: val.url_string,
             description: val.description,
             code: val.code,
             image_url: imageUrl,
@@ -74,15 +74,15 @@ const CategoriesBrowser = ({value, valueSelected, setOpen, includeParts}) => {
 
   const allCategoriesSelected = () => {
     valueSelected({
-      category: {id: 0, description: 'All', image_url: 'none'},
-      subCategory: {id: 0, description: 'All', image_url: 'none'},
+      category: {id: 0, url_string: 'All', description: 'All', image_url: 'none'},
+      subCategory: {id: 0, url_string: 'All', description: 'All', image_url: 'none'},
     });
   };
 
   const categorySelected = (val) => {
     valueSelected({
       category: val,
-      subCategory: {id: 0, description: 'All', image_url: 'none'},
+      subCategory: {id: 0, url_string: 'All', description: 'All', image_url: 'none'},
     });
   };
 

@@ -4,7 +4,7 @@ import { CircularProgress, IconButton, Typography } from '@mui/material';
 import DiscountedProduct from './DiscountedProduct';
 import { KeyboardArrowLeft, KeyboardArrowRight } from '@mui/icons-material';
 
-const DiscountedProducts = ({width, selectValue}) => {
+const DiscountedProducts = ({width}) => {
   const [isLoading, setIsLoading] = useState(false);
   const [serverError, setServerError] = useState(false);
 
@@ -114,6 +114,7 @@ const DiscountedProducts = ({width, selectValue}) => {
               model_id: val.model_id,
               model_description: val.model.description,
               code: val.code,
+              url_string: val.url_string,
               heading: val.heading,
               short_description: val.short_description,
               description: val.description,
@@ -179,7 +180,7 @@ const DiscountedProducts = ({width, selectValue}) => {
           <div className='relative w-full'>
             <div className='flex flex-row justify-center md:justify-between items-center flex-wrap gap-5'>
               {discounted.map((val)=>
-                <DiscountedProduct key={val.id+val.heading} val={val} itemWidth={itemWidth} vertical={verticalMode} selectValue={selectValue}/>
+                <DiscountedProduct key={val.id+val.heading} val={val} itemWidth={itemWidth} vertical={verticalMode}/>
               )}
             </div>
           </div>
